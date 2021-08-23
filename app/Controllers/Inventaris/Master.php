@@ -3,12 +3,23 @@
 namespace App\Controllers\Inventaris;
 use App\Controllers\BaseController;
 
+use App\Models\Inventaris\MasterModel;
+
 class Master extends BaseController
-{
-      public function index()
+{     
+
+      protected $masterModel;
+
+      public function __construct()
       {
+            $this->masterModel = new MasterModel;
+      }
+
+      public function index()
+      {     
             $data = [
-                  'title' => 'Master Barang'
+                  'title' => 'Master Barang',
+                  'master' => $this->masterModel->findAll()
             ];
 
             return view('inventaris/master', $data);
