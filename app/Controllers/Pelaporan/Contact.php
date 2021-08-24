@@ -16,9 +16,22 @@ class Contact extends BaseController
 
 	public function index()
 	{	
+		$currentPage = $this->request->getvar('page_contact') ? $this->request->getvar('page_contact') : 1;
+
+		$keyword = $this->request->getvar('keyword');
+		if($keyword)
+		{
+			$contact = $this->contactModel->search($keyword);
+		}else {
+			$contact = $this->contactModel;
+		}
+
+
 		$data = [
                   'title' => 'Contact Center',
-			'contact' => $this->contactModel->findAll()
+			'contact' => $contact->paginate(6, 'contact'),
+			'pager' => $this->contactModel->pager,
+			'currentPage' => $currentPage
             ];
 		
 		return view('pelaporan/contact', $data);

@@ -12,20 +12,27 @@
                   <h6 class="m-0 font-weight-bold text-primary">Pelaporan</h6>
             </div>
             <div class="card-body">
-                  <div class="row">
-                        <div class="col-4">
-                              <form action="" method="post">
+                  <nav class="navbar navbar-light bg-light">
+                        <div>
+                              <a style="width:100%;" href="javascript:void()" class="btn btn-success btn-sm"
+                                    onclick="tambah_pemakaian()">
+                                    <i class="fa fa-plus"></i>&nbsp; TAMBAH PENGADUAN
+                              </a>
+                        </div>
+                        <form action="" method="post" class="form-inline">
+                              <div class="col-12">
                                     <div class="input-group mb-3">
-                                          <input type="text" class="form-control"
-                                                placeholder="Masukan keyword Pencarian.." name="keyword">
+                                          <input type="text" class="form-control" placeholder="Insert Keyword"
+                                                name="keyword">
                                           <div class="input-group-append">
                                                 <button class="btn btn-outline-secondary" type="submit"
                                                       name="submit"><strong>Cari</strong></button>
                                           </div>
                                     </div>
-                              </form>
-                        </div>
-                  </div>
+                              </div>
+                        </form>
+                  </nav>
+                  <br>
                   <div class="table-responsive">
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" responsive>
                               <thead>
@@ -65,8 +72,8 @@
                                     <?php endForeach; ?>
                               </tbody>
                         </table>
-                        <?= $pager->links('pelaporan', 'pelaporan_pagination'); ?>
                   </div>
+                  <?= $pager->links('pelaporan', 'pelaporan_pagination'); ?>
             </div>
       </div>
 </div>

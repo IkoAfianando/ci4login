@@ -55,7 +55,7 @@
             <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                   data-parent="#accordionSidebar">
                   <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="<?= base_url('inventaris/master'); ?>">Maser Barang</a>
+                        <a class="collapse-item" href="<?= base_url('inventaris/master'); ?>">Master Barang</a>
                         <a class="collapse-item" href="<?= base_url('inventaris/barang'); ?>">Barang Masuk</a>
                         <a class="collapse-item" href="<?= base_url('inventaris/mutasi'); ?>">Mutasi</a>
                         <a class="collapse-item" href="<?= base_url('inventaris/pengembalian'); ?>">Pengembalian</a>

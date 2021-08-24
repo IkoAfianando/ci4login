@@ -10,7 +10,7 @@ class MasterSeeder extends Seeder
 {
 	public function run()
 	{
-		$faker = \Faker\Factory::create('ja_JP');
+		$faker = \Faker\Factory::create('en_US');
 		for($i = 0; $i < 100; $i++){
 			
 			$data = [

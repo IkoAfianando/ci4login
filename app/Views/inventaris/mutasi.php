@@ -25,7 +25,7 @@
             <div class="tab-content" id="myTabContent">
                   <div class="tab-pane fade show active" id="pemakaian" role="tabpanel" aria-labelledby="pemakaian-tab">
                         <div>
-                              <div class="item form-group">
+                              <nav class="navbar navbar-light bg-light">
                                     <div class="col-md-3 col-sm-3 ">
                                           <label> Pilih Pengeluaran Barang </label>
                                           <br>
@@ -39,7 +39,22 @@
                                                 </select>
                                           </div>
                                     </div>
-                                    <br>
+                                    <form action="" method="post" class="form-inline">
+                                          <div class="col-12">
+                                                <div class="input-group mb-3">
+                                                      <input type="text" class="form-control"
+                                                            placeholder="Input Keyword" name="keyword">
+                                                      <div class="input-group-append">
+                                                            <button class="btn btn-outline-secondary" type="submit"
+                                                                  name="submit"><strong><i class="fa fa-search"
+                                                                              aria-hidden="true"></i></strong></button>
+                                                      </div>
+                                                </div>
+                                          </div>
+                                    </form>
+                              </nav>
+                              <br>
+                              <div class="item form-group">
                                     <div>
                                           <a style="width:100%;" href="javascript:void()" class="btn btn-success btn-sm"
                                                 onclick="tambah_pemakaian()">
