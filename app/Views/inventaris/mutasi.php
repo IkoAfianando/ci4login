@@ -5,7 +5,7 @@
 <div class="container-fluid">
       <div class="card shadow mb-4">
             <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">Mutasi</h6>
             </div>
             <div class="col-md-12 col-sm-12 ">
                   <ul class="nav nav-tabs bar_tabs" id="myTab" role="tablist">
@@ -84,7 +84,7 @@
                                                       </tr>
                                                 </thead>
                                                 <tbody>
-                                                      <?php $i = 1; ?>
+                                                      <?php $i = 1 + (6 *($currentPage - 1)); ?>
                                                       <?php foreach($mutasi as $m) : ?>
                                                       <tr>
                                                             <th scope='row'><?= $i++; ?></th>
@@ -107,11 +107,90 @@
                                                 </tbody>
                                           </table>
                                     </div>
+                                    <?= $pager->links('mutasi', 'pelaporan_pagination'); ?>
                               </div>
                         </div>
                   </div>
                   <div class="tab-pane fade" id="dokumen" role="tabpanel" aria-labelledby="dokumen-tab">
-                        <h2>Dokumen Berita Acara Barang Keluar</h2>
+                        <h4 style="text-align:left" class="berita">Dokumen Berita Acara Barang Keluar</h4>
+                        <div>
+                              <nav class="navbar navbar-light bg-light">
+                                    <div class="col-md-3 col-sm-3 ">
+                                          <label> Pilih Pengeluaran Barang </label>
+                                          <br>
+                                          <div>
+                                                <SELECT name="jenis" id="jenis"
+                                                      class="form-control form-control-sm select2" onchange="">
+                                                      <OPTION value='all' selected>Semua </OPTION>
+                                                      <OPTION value='1'>Terpakai </OPTION>
+                                                      <OPTION value='2'>Terpasang </OPTION>
+                                                      <OPTION value='3'>Terpinjam</OPTION>
+                                                </select>
+                                          </div>
+                                    </div>
+                                    <form action="" method="post" class="form-inline">
+                                          <div class="col-12">
+                                                <div class="input-group mb-3">
+                                                      <input type="text" class="form-control"
+                                                            placeholder="Input Keyword" name="keyword">
+                                                      <div class="input-group-append">
+                                                            <button class="btn btn-outline-secondary" type="submit"
+                                                                  name="submit"><strong><i class="fa fa-search"
+                                                                              aria-hidden="true"></i></strong></button>
+                                                      </div>
+                                                </div>
+                                          </div>
+                                    </form>
+                              </nav>
+                              <br>
+                              <div class="item form-group">
+                                    <div>
+                                          <a style="width:100%;" href="javascript:void()" class="btn btn-success btn-sm"
+                                                onclick="tambah_pemakaian()">
+                                                <i class="fa fa-plus"></i>&nbsp; Tambah Data Mutasi
+                                                Barang
+                                          </a>
+                                    </div>
+                              </div>
+                              <div class="card-body">
+                                    <div class="table-responsive">
+                                          <table class="table table-bordered" id="dataTable" width="100%"
+                                                cellspacing="0">
+                                                <thead>
+                                                      <tr>
+                                                            <th>No</th>
+                                                            <th>Kode Berita Acara</th>
+                                                            <th>SKPD/Lokasi</th>
+                                                            <th>Jenis Pengeluaran</th>
+                                                            <th>Nomor Pelaporan</th>
+                                                            <th>Penanggung Jawab</th>
+                                                            <th>Tanggal</th>
+                                                            <th>Keterangan</th>
+                                                            <th>Cetak</th>
+                                                      </tr>
+                                                </thead>
+                                                <tbody>
+                                                      <?php $i = 1 + (6 *($currentPage - 1)); ?>
+                                                      <?php foreach($mutasi as $m) : ?>
+                                                      <tr>
+                                                            <th scope='row'><?= $i++; ?></th>
+                                                            <td>
+                                                                  <strong><?= $m['kode_berita']; ?></strong>
+                                                            </td>
+                                                            <td><?= $m['lokasi_berita']; ?></td>
+                                                            <td><?= $m['jenis_berita']; ?></td>
+                                                            <td><?= $m['nomor_berita']; ?></td>
+                                                            <td><?= $m['penanggung_jawab_berita']; ?></td>
+                                                            <td><?= $m['tanggal_berita']; ?></td>
+                                                      </tr>
+
+                                                      <?php endForeach; ?>
+                                                </tbody>
+                                          </table>
+                                    </div>
+                                    <?= $pager->links('mutasi', 'pelaporan_pagination'); ?>
+                              </div>
+                        </div>
                   </div>
             </div>
       </div>

@@ -14,7 +14,7 @@ class PengembalianSeeder extends Seeder
 		for($i = 0; $i < 100; $i++){
 			
 			$data = [
-				'barang' => $faker->streetSuffix(),
+				'barang' => $faker->countryCode(),
 				'id_barang' => $faker->country(),
 				'jumlah' => $faker->postcode(),
 				'nomor' => $faker->postcode(),

@@ -23,6 +23,12 @@ class MutasiSeeder extends Seeder
 				'penanggung_jawab' => $faker->name,
 				'penerima' => $faker->name,
 				'keterangan' => $faker->streetAddress(),
+				'kode_berita' => $faker->streetAddress(),
+				'lokasi_berita' => $faker->citySuffix(),
+				'jenis_berita' => $faker->address(),
+				'nomor_berita' => $faker->streetAddress(),
+				'penanggung_jawab_berita' => $faker->name(),
+				'tanggal_berita' => Time::now(),
 				'created_at' => Time::createFromTimestamp($faker->unixTime()),
 				'updated_at' => Time::now()
 

@@ -16,9 +16,20 @@ class Stock extends BaseController
 
       public function index()
       {     
+            $currentPage = $this->request->getVar('page_stok') ? $this->request->getVar('page_stok') : 1;
+            
+            $keyword = $this->request->getVar('keyword');
+            if($keyword){
+                  $stok = $this->stokModel->search($keyword);
+            }else{
+                  $stok = $this->stokModel;
+            }
+
             $data = [
                   'title' => 'Stok Barang',
-                  'stok'  => $this->stokModel->findAll()
+                  'stok'  => $stok->paginate(6, 'stok'),
+                  'pager' => $this->stokModel->pager,
+                  'currentPage' => $currentPage
             ];
 
             return view('inventaris/stock', $data);

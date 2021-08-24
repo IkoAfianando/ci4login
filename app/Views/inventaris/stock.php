@@ -13,6 +13,28 @@
                   <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
             </div>
             <div class="card-body">
+                  <nav class="navbar navbar-light bg-light">
+                        <div>
+                              <a style="width:100%;" href="javascript:void()" class="btn btn-success btn-sm"
+                                    onclick="tambah_pemakaian()">
+                                    <i class="fa fa-plus"></i>&nbsp; Tambah Stok
+                              </a>
+                        </div>
+                        <form action="" method="post" class="form-inline">
+                              <div class="col-12">
+                                    <div class="input-group mb-3">
+                                          <input type="text" class="form-control" placeholder="Input Keyword"
+                                                name="keyword">
+                                          <div class="input-group-append">
+                                                <button class="btn btn-outline-secondary" type="submit"
+                                                      name="submit"><strong><i class="fa fa-search"
+                                                                  aria-hidden="true"></i></strong></button>
+                                          </div>
+                                    </div>
+                              </div>
+                        </form>
+                  </nav>
+                  <br>
                   <div class="table-responsive">
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                               <thead>
@@ -26,7 +48,7 @@
                                     </tr>
                               </thead>
                               <tbody>
-                                    <?php $i = 1; ?>
+                                    <?php $i = 1 + (6 *($currentPage - 1)); ?>
                                     <?php foreach($stok as $s) : ?>
                                     <tr>
                                           <th scope="row"><?= $i++; ?></th>
@@ -42,6 +64,7 @@
                               </tbody>
                         </table>
                   </div>
+                  <?= $pager->links('stok', 'pelaporan_pagination'); ?>
             </div>
       </div>
 </div>

@@ -56,6 +56,34 @@ class Mutasi extends Migration
 			'type' => 'VARCHAR',
 			'constraint' => '255',
 	    	],
+		'kode_berita' => [
+			'type' => 'VARCHAR',
+			'constraint' => '255',
+	    	],
+		'lokasi_berita' => [
+			'type' => 'VARCHAR',
+			'constraint' => '255',
+	    	],
+		'jenis_berita' => [
+			'type' => 'VARCHAR',
+			'constraint' => '255',
+	    	],
+		'nomor_berita' => [
+			'type' => 'VARCHAR',
+			'constraint' => '255',
+	    	],
+		'penanggung_jawab_berita' => [
+			'type' => 'VARCHAR',
+			'constraint' => '255',
+	    	],
+		'tanggal_berita' => [
+			'type' => 'DATETIME',
+			'null' => TRUE,
+	    	],
+		'keterangan' => [
+			'type' => 'VARCHAR',
+			'constraint' => '255',
+	    	],
 		'created_at' => [
 			'type'	=> 'DATETIME',
 			'null'	=> TRUE
