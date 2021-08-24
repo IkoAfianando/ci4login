@@ -12,6 +12,20 @@
                   <h6 class="m-0 font-weight-bold text-primary">Pelaporan</h6>
             </div>
             <div class="card-body">
+                  <div class="row">
+                        <div class="col-4">
+                              <form action="" method="post">
+                                    <div class="input-group mb-3">
+                                          <input type="text" class="form-control"
+                                                placeholder="Masukan keyword Pencarian.." name="keyword">
+                                          <div class="input-group-append">
+                                                <button class="btn btn-outline-secondary" type="submit"
+                                                      name="submit"><strong>Cari</strong></button>
+                                          </div>
+                                    </div>
+                              </form>
+                        </div>
+                  </div>
                   <div class="table-responsive">
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" responsive>
                               <thead>
@@ -21,36 +35,37 @@
                                           <th scope="col">No.Telepon</th>
                                           <th scope="col">keterangan</th>
                                           <th scope="col">KOORD</th>
-                                          <th>Status</th>
-                                          <th>Priority</th>
-                                          <th>Source Tiket ID</th>
-                                          <th>TGL</th>
-                                          <th>ADD TEAM</th>
-                                          <th>EDIT</th>
-                                          <th>CLOSE TICKET</th>
+                                          <th scope="col">Status</th>
+                                          <th scope="col">Priority</th>
+                                          <th scope="col">Source Tiket ID</th>
+                                          <th scope="col">TGL</th>
+                                          <th scope="col">ADD TEAM</th>
+                                          <th scope="col">EDIT</th>
+                                          <th scope="col">CLOSE TICKET</th>
                                     </tr>
                               </thead>
                               <tbody>
-                                    <?php $i = 1; ?>
+                                    <?php $i = 1 + (6 * ($currentPage - 1)); ?>
                                     <?php foreach($pelaporan as $p) : ?>
                                     <tr>
                                           <th scope='row'><?= $i++; ?></th>
                                           <td>
                                                 <strong><?= $p['nama']; ?></strong>
                                           </td>
-                                          <td><?= $p['telepon']; ?></td>
-                                          <td><?= $p['keterangan']; ?></td>
-                                          <td><?= $p['koord']; ?></td>
-                                          <td><?= $p['status']; ?></td>
-                                          <td><?= $p['koord']; ?></td>
-                                          <td><?= $p['koord']; ?></td>
-                                          <td><?= $p['created_at']; ?></td>
+                                          <td><strong><?= $p['telepon']; ?></strong></td>
+                                          <td><strong><?= $p['keterangan']; ?></strong></td>
+                                          <td><strong><?= $p['koord']; ?></strong></td>
+                                          <td><strong><?= $p['status']; ?></strong></td>
+                                          <td><strong><?= $p['koord']; ?></strong></td>
+                                          <td><strong><?= $p['koord']; ?></strong></td>
+                                          <td><strong><?= $p['created_at']; ?></strong></td>
 
                                     </tr>
 
                                     <?php endForeach; ?>
                               </tbody>
                         </table>
+                        <?= $pager->links('pelaporan', 'pelaporan_pagination'); ?>
                   </div>
             </div>
       </div>
