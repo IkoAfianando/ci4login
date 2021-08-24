@@ -54,18 +54,42 @@
                                                 cellspacing="0">
                                                 <thead>
                                                       <tr>
-                                                            <th>Name</th>
-                                                            <th>Position</th>
-                                                            <th>Office</th>
-                                                            <th>Age</th>
-                                                            <th>Start date</th>
-                                                            <th>Salary</th>
+                                                            <th>No</th>
+                                                            <th>Kode Transaksi</th>
+                                                            <th>ID Peminjaman</th>
+                                                            <th>Nama Barang</th>
+                                                            <th>Nomor Pelaporan</th>
+                                                            <th>Jumlah</th>
+                                                            <th>Lokasi</th>
+                                                            <th>Penanggung Jawab</th>
+                                                            <th>Penerima</th>
+                                                            <th>Status</th>
+                                                            <th>Keterangan</th>
+                                                            <th>Mutasi</th>
                                                       </tr>
                                                 </thead>
-                                                <!-- <tbody>
-                                              
-                                                     
-                                                </tbody> -->
+                                                <tbody>
+                                                      <?php $i = 1; ?>
+                                                      <?php foreach($mutasi as $m) : ?>
+                                                      <tr>
+                                                            <th scope='row'><?= $i++; ?></th>
+                                                            <td>
+                                                                  <strong><?= $m['kode']; ?></strong>
+                                                            </td>
+                                                            <td><?= $m['id_peminjaman']; ?></td>
+                                                            <td><?= $m['nama']; ?></td>
+                                                            <td><?= $m['nomor']; ?></td>
+                                                            <td><?= $m['jumlah']; ?></td>
+                                                            <td><?= $m['lokasi']; ?></td>
+                                                            <td><?= $m['penanggung_jawab']; ?></td>
+                                                            <td><?= $m['penerima']; ?></td>
+                                                            <td><?= $m['status']; ?></td>
+                                                            <td><?= $m['keterangan']; ?></td>
+
+                                                      </tr>
+
+                                                      <?php endForeach; ?>
+                                                </tbody>
                                           </table>
                                     </div>
                               </div>

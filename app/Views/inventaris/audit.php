@@ -6,9 +6,6 @@
 
       <!-- Page Heading -->
       <h1 class="h3 mb-2 text-gray-800">Tables</h1>
-      <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below.
-            For more information about DataTables, please visit the <a target="_blank"
-                  href="https://datatables.net">official DataTables documentation</a>.</p>
 
       <!-- DataTales Example -->
       <div class="card shadow mb-4">
@@ -20,14 +17,29 @@
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                               <thead>
                                     <tr>
-                                          <th>Name</th>
-                                          <th>Position</th>
-                                          <th>Office</th>
-                                          <th>Age</th>
-                                          <th>Start date</th>
-                                          <th>Salary</th>
+                                          <th>No</th>
+                                          <th>Nama / SKPD</th>
+                                          <th>No.Telepon/PIC</th>
+                                          <th>TGL AUDIT</th>
+                                          <th>AUDITOR</th>
+                                          <th>EDIT</th>
                                     </tr>
                               </thead>
+                              <tbody>
+                                    <?php $i = 1; ?>
+                                    <?php foreach($audit as $a): ?>
+                                    <tr>
+                                          <th scope='row'><?= $i++; ?></th>
+                                          <td>
+                                                <strong><?= $a['skpd']; ?></strong>
+                                          </td>
+                                          <td><?= $a['telepon']; ?></td>
+                                          <td><?= $a['tanggal']; ?></td>
+                                          <td><?= $a['auditor']; ?></td>
+                                    </tr>
+
+                                    <?php endForeach; ?>
+                              </tbody>
                         </table>
                   </div>
             </div>

@@ -6,9 +6,6 @@
 
       <!-- Page Heading -->
       <h1 class="h3 mb-2 text-gray-800">Tables</h1>
-      <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below.
-            For more information about DataTables, please visit the <a target="_blank"
-                  href="https://datatables.net">official DataTables documentation</a>.</p>
 
       <!-- DataTales Example -->
       <div class="card shadow mb-4">
@@ -20,14 +17,29 @@
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                               <thead>
                                     <tr>
-                                          <th>Name</th>
-                                          <th>Position</th>
-                                          <th>Office</th>
-                                          <th>Age</th>
-                                          <th>Start date</th>
-                                          <th>Salary</th>
+                                          <th>No</th>
+                                          <th>Nama Barang</th>
+                                          <th>id Barang Keluar</th>
+                                          <th>Jumlah</th>
+                                          <th>Keterangan</th>
                                     </tr>
                               </thead>
+                              <tbody>
+                                    <?php $i = 1; ?>
+                                    <?php foreach($pengembalian as $p) : ?>
+                                    <tr>
+                                          <th scope='row'><?= $i++; ?></th>
+                                          <td>
+                                                <strong><?= $p['barang']; ?></strong>
+                                          </td>
+                                          <td><?= $p['id_barang']; ?></td>
+                                          <td><?= $p['jumlah']; ?></td>
+                                          <td><?= $p['keterangan']; ?></td>
+
+                                    </tr>
+
+                                    <?php endForeach; ?>
+                              </tbody>
                         </table>
                   </div>
             </div>
