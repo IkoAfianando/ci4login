@@ -2,10 +2,17 @@
   color: white;
 }
 
+tr {
+  color: black;
+}
 .berita {
   margin-left: 30px;
 }
 
+#atasan {
+  color: #0f52ba;
+}
+/* 
 .pagination > li > a {
   background-color: #0066ff;
   color: white;
@@ -23,4 +30,4 @@
   color: #000000;
   background-color: white;
   border: solid 1px white;
-}
+} */

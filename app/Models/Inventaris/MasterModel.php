@@ -10,8 +10,9 @@ class MasterModel extends Model
       protected $useTimestamp = 'true';
       // protected $allowedFields = ['nama', 'telepon'];
 
-      public function search($keyword)
-      {
-            return $this->table('master')->like('nama', $keyword)->orlike('kode', $keyword);
-      }
+//       public function search($keyword)
+//       {
+//             return $this->table('master')->like('nama', $keyword)->orlike('kode', $keyword);
+//       }
+// 
 }

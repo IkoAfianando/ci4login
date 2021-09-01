@@ -10,8 +10,8 @@ class BarangModel extends Model
       protected $useTimestamp = 'true';
       // protected $allowedFields = ['nama', 'telepon'];
 
-      public function search($keyword)
-      {
-            return $this->table('barang')->like('nomor', $keyword)->orlike('kode', $keyword);
-      }
+      // public function search($keyword)
+      // {
+      //       return $this->table('barang')->like('nomor', $keyword)->orlike('kode', $keyword);
+      // }
 }

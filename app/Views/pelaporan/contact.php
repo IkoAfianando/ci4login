@@ -9,7 +9,7 @@
       <!-- DataTales Example -->
       <div class="card shadow mb-4">
             <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Contact Center</h6>
+                  <h6 class="m-0 font-weight-bold" id="atasan">Contact Center</h6>
             </div>
             <div class="card-body">
                   <nav class="navbar navbar-light bg-light">
@@ -19,23 +19,11 @@
                                     <i class="fa fa-plus"></i>&nbsp; Tambah PIC
                               </a>
                         </div>
-                        <form action="" method="post" class="form-inline">
-                              <div class="col-12">
-                                    <div class="input-group mb-3">
-                                          <input type="text" class="form-control" placeholder="Input Keyword"
-                                                name="keyword">
-                                          <div class="input-group-append">
-                                                <button class="btn btn-outline-secondary" type="submit"
-                                                      name="submit"><strong><i class="fa fa-search"
-                                                                  aria-hidden="true"></i></strong></button>
-                                          </div>
-                                    </div>
-                              </div>
-                        </form>
                   </nav>
                   <br>
-                  <div class="table-responsive">
-                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <div class="box-body table-responsive">
+                        <table class="table table-striped table-bordered dt-responsive nowrap" width="100%"
+                              cellspacing="0" id="pelaporan" responsive>
                               <thead>
                                     <tr>
                                           <th>No</th>
@@ -47,56 +35,36 @@
                                     </tr>
                               </thead>
                               <tbody>
-                                    <?php $i = 1 + (6 * ($currentPage - 1)); ?>
+                                    <?php $i = 1; ?>
                                     <?php foreach($contact as $c) : ?>
                                     <tr>
-                                          <th scope='row'><?= $i++; ?></th>
+                                          <td><?= $i++; ?></td>
                                           <td>
-                                                <strong><?= $c['skpd']; ?></strong>
+                                                <?= $c['skpd']; ?>
                                           </td>
                                           <td><?= $c['nama']; ?></td>
                                           <td><?= $c['jabatan']; ?></td>
                                           <td><?= $c['telepon']; ?></td>
-
+                                          <td>
+                                                <a href="" class="btn btn-primary btn-sm">
+                                                      <i class="fa fa-eye" class="d-inline"></i>
+                                                </a>
+                                                <a onclick="return confirm('Yakin akan menghapus?');"
+                                                      href="/pelaporan/contact/delete/<?= $c['id']; ?>"
+                                                      class=" btn btn-danger btn-sm" class="d-inline">
+                                                      <i class="fa fa-trash"></i>
+                                                </a>
+                                          </td>
                                     </tr>
 
                                     <?php endForeach; ?>
                               </tbody>
                         </table>
                   </div>
-                  <?= $pager->links('contact', 'pelaporan_pagination'); ?>
             </div>
       </div>
 </div>
 
-<!-- <script>
-// Example starter JavaScript for disabling form submissions if there are invalid fields
-(function() {
-      'use strict';
-      window.addEventListener('load', function() {
-            // Fetch all the forms we want to apply custom Bootstrap validation styles to
-            var forms = document.getElementsByClassName(
-                  'needs-validation');
-            // Loop over them and prevent submission
-            var validation = Array.prototype.filter.call(forms,
-                  function(form) {
-                        form.addEventListener('submit', function(
-                              event) {
-                              if (form
-                                    .checkValidity() ===
-                                    false) {
-                                    event
-                                          .preventDefault();
-                                    event
-                                          .stopPropagation();
-                              }
-                              form.classList.add(
-                                    'was-validated'
-                              );
-                        }, false);
-                  });
-      }, false);
-})();
-</script> -->
+
 
 <?= $this->endSection(); ?>

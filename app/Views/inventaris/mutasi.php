@@ -16,7 +16,7 @@
                         </li>
                         <li class="nav-item">
                               <a class="nav-link" id="dokumen-tab" data-toggle="tab" href="#dokumen" role="tab"
-                                    aria-controls="dokumen" aria-selected="false">Berita Acara / Dokumen
+                                    aria-controls="dokumen" aria-selected="false">Berita Acara /
                                     Report</a>
                         </li>
                   </ul>
@@ -100,6 +100,17 @@
                                                             <td><?= $m['penerima']; ?></td>
                                                             <td><?= $m['status']; ?></td>
                                                             <td><?= $m['keterangan']; ?></td>
+                                                            <td>
+                                                                  <a href="" class="btn btn-primary btn-sm">
+                                                                        <i class="fa fa-eye" class="d-inline"></i>
+                                                                  </a>
+
+                                                                  <a onclick="return confirm('Yakin akan menghapus?');"
+                                                                        href="" class=" btn btn-danger btn-sm"
+                                                                        class="d-inline">
+                                                                        <i class="fa fa-trash"></i>
+                                                                  </a>
+                                                            </td>
 
                                                       </tr>
 
@@ -132,7 +143,7 @@
                                           <div class="col-12">
                                                 <div class="input-group mb-3">
                                                       <input type="text" class="form-control"
-                                                            placeholder="Input Keyword" name="keyword">
+                                                            placeholder="Input Keyword" name="kunci">
                                                       <div class="input-group-append">
                                                             <button class="btn btn-outline-secondary" type="submit"
                                                                   name="submit"><strong><i class="fa fa-search"

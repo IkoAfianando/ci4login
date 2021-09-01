@@ -1,16 +1,21 @@
 <?php
 
 namespace App\Controllers;
+use App\Models\AdminModel;
 
 class Admin extends BaseController
 {	
-	protected $db, $builder;
+	protected $db, $builder, $adminModel; 
 
 	public function __construct()
 	{
 		$this->db      = \Config\Database::connect();
 		$this->builder = $this->db->table('users');
+		$this->adminModel = new AdminModel();
 	}
+
+	public function __invoke()
+	{}
 
 	public function index()
 	{	
@@ -40,13 +45,55 @@ class Admin extends BaseController
 		$this->builder->where('users.id', $id);
 		$query = $this->builder->get();
 
-		$data['user'] = $query->getRow();
+		$data['users'] = $query->getRow();
 
-		if (empty($data['user'])) {
+		if (empty($data['users'])) {
 			return redirect()->to('/admin');
 		}
 		
 		return view('admin/detail', $data);
 
 	}
+
+	public function create()
+	{
+		$data = [
+			'title' => 'Form tambah data User'
+		];
+
+		return view('admin/create', $data);
+	}
+
+	// public function save()
+	// {
+	// 	$this->adminModel->save([
+	// 		'email' => $this->request->getVar('email'),
+	// 		'username' => $this->request->getVar('username'),
+	// 		'password' => $this->request->getVar('password'),
+	// 		'gambar' => $this->request->getVar('user_image')
+	// 	]);
+
+	// 	return redirect()->to('/admin');
+	// }
+
+	public function delete($id)
+      {     
+		$this->adminModel->delete($id);
+		return redirect()->to('/admin');
+            // //cari gambar berdasarkan id
+            // $komik = $this->komikModel->find($id);
+
+            // //cek jika file gambar default
+            // if($komik['sampul'] != 'default.png'){
+
+            //       unlink('img/' . $komik['sampul']);
+            //       // hapus gambar
+            // }
+
+            // $this->komikModel->delete($id);
+
+            // session()->setFlashdata('hapus', 'Data Berhasil di hapus.');
+
+            // return redirect()->to('admin/');
+      }
 }

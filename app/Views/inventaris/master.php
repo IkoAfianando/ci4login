@@ -9,7 +9,7 @@
       <!-- DataTales Example -->
       <div class="card shadow mb-4">
             <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Master Barang Inventaris</h6>
+                  <h6 class="m-0 font-weight-bold" id="atasan">Master Barang Inventaris</h6>
             </div>
             <div class="card-body">
                   <nav class="navbar navbar-light bg-light">
@@ -19,23 +19,11 @@
                                     <i class="fa fa-plus"></i>&nbsp; Tambah Data Master Barang
                               </a>
                         </div>
-                        <form action="" method="post" class="form-inline">
-                              <div class="col-12">
-                                    <div class="input-group mb-3">
-                                          <input type="text" class="form-control" placeholder="Input Keyword"
-                                                name="keyword">
-                                          <div class="input-group-append">
-                                                <button class="btn btn-outline-secondary" type="submit"
-                                                      name="submit"><strong><i class="fa fa-search"
-                                                                  aria-hidden="true"></i></strong></button>
-                                          </div>
-                                    </div>
-                              </div>
-                        </form>
                   </nav>
                   <br>
                   <div class="table-responsive">
-                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <table class="table table-striped table-bordered dt-responsive nowrap" width="100%"
+                              id="pelaporan" width="100%" cellspacing="0">
                               <thead>
                                     <tr>
                                           <th>id</th>
@@ -49,18 +37,28 @@
                                     </tr>
                               </thead>
                               <tbody>
-                                    <?php $i = 1 + (6 * ($currentPage - 1)); ?>
+                                    <?php $i = 1; ?>
                                     <?php foreach($master as $m) : ?>
                                     <tr>
-                                          <th scope='row'><?= $i++; ?></th>
+                                          <td><?= $i++; ?></td>
                                           <td>
-                                                <strong><?= $m['kode']; ?></strong>
+                                                <?= $m['kode']; ?>
                                           </td>
                                           <td><?= $m['nama']; ?></td>
                                           <td><?= $m['jenis']; ?></td>
                                           <td><?= $m['satuan']; ?></td>
                                           <td><?= $m['harga']; ?></td>
                                           <td><?= $m['keterangan']; ?></td>
+                                          <td>
+                                                <a href="" class="btn btn-primary btn-sm">
+                                                      <i class="fa fa-eye" class="d-inline"></i>
+                                                </a>
+
+                                                <a onclick="return confirm('Yakin akan menghapus?');" href=""
+                                                      class=" btn btn-danger btn-sm" class="d-inline">
+                                                      <i class="fa fa-trash"></i>
+                                                </a>
+                                          </td>
 
                                     </tr>
 
@@ -68,7 +66,6 @@
                               </tbody>
                         </table>
                   </div>
-                  <?= $pager->links('master', 'pelaporan_pagination'); ?>
             </div>
       </div>
 </div>

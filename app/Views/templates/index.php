@@ -21,6 +21,9 @@
       <link href="<?= base_url() ?>/css/sb-admin-2.min.css" rel="stylesheet">
       <link href="<?= base_url() ?>/css/style.css" rel="stylesheet">
 
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+      <link rel="stylesheet" href=" https://cdn.datatables.net/1.11.0/css/dataTables.bootstrap4.min.css">
+
 </head>
 
 <body id="page-top">
@@ -101,6 +104,15 @@
       <!-- Custom scripts for all pages-->
       <script src="<?= base_url() ?>/js/sb-admin-2.min.js"></script>
 
+      <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+      <script src="https://cdn.datatables.net/1.11.0/js/jquery.dataTables.min.js"></script>
+      <script src=" https://cdn.datatables.net/1.11.0/js/dataTables.bootstrap4.min.js"></script>
+
+      <script>
+      $(document).ready(function() {
+            $('#mydatatable').DataTable();
+      });
+      </script>
 </body>
 
 </html>

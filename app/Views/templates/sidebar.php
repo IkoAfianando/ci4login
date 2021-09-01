@@ -90,7 +90,7 @@
       </li>
 
       <!-- Nav Item - Managemen Aplikasi Collapse Menu -->
-      <!-- <li class="nav-item">
+      <li class="nav-item">
             <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseManagemen" aria-expanded="true"
                   aria-controls="collapseManagemen">
                   <i class="fas fa-tasks"></i>
@@ -102,7 +102,7 @@
                         <a class="collapse-item" href="<?= base_url('management/chart'); ?>">Ganti Chart</a>
                   </div>
             </div>
-      </li> -->
+      </li>
 
       <!-- Nav Item - Aktivitas Collapse Menu -->
       <!-- <li class="nav-item">

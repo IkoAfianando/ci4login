@@ -35,7 +35,8 @@
                   </nav>
                   <br>
                   <div class="table-responsive">
-                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <table class="table table-striped table-bordered dt-responsive nowrap" id="pelaporan"
+                              width="100%" cellspacing="0">
                               <thead>
                                     <tr>
                                           <th>id</th>
@@ -76,7 +77,6 @@
                               </tbody>
                         </table>
                   </div>
-                  <?= $pager->links('barang', 'pelaporan_pagination'); ?>
             </div>
       </div>
 </div>

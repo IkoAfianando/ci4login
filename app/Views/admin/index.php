@@ -9,6 +9,7 @@
 
       <div class="row">
             <div class="col-lg-8">
+                  <!-- <a href="/admin/create" class="btn btn-primary btn-sm mb-3">Tambah Data User</a>  -->
                   <div class="table-responsive">
                         <table class="table">
                               <thead>
@@ -31,6 +32,11 @@
                                           <td>
                                                 <a href="<?= base_url('admin/'. $user->userid); ?>"
                                                       class="btn btn-sm btn-info">Detail</a>
+                                                <!-- <a onclick="return confirm('Yakin akan menghapus?');"
+                                                      href="admin/delete/"
+                                                      class="btn btn-danger btn-sm">
+                                                      <i class="fa fa-trash"></i>
+                                                </a> -->
                                           </td>
 
                                     </tr>

@@ -25,6 +25,13 @@ class Mutasi extends BaseController
                   $mutasi = $this->mutasiModel;
             }
             
+            $kunci = $this->request->getVar('kunci');
+            if($kunci){
+                  $mutasi = $this->mutasiModel->cari($kunci);
+            }else {
+                  $mutasi = $this->mutasiModel;
+            }
+            
             $data = [
                   'title' => 'Mutasi',
                   'mutasi' => $mutasi->paginate(6, 'mutasi'),
