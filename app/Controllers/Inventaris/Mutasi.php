@@ -16,27 +16,25 @@ class Mutasi extends BaseController
 
       public function index()
       {     
-            $currentPage = $this->request->getVar('page_mutasi') ? $this->request->getVar('page_mutasi') : 1;
+            // $currentPage = $this->request->getVar('page_mutasi') ? $this->request->getVar('page_mutasi') : 1;
 
-            $keyword = $this->request->getVar('keyword');
-            if($keyword){
-                  $mutasi = $this->mutasiModel->search($keyword);
-            }else {
-                  $mutasi = $this->mutasiModel;
-            }
+            // $keyword = $this->request->getVar('keyword');
+            // if($keyword){
+            //       $mutasi = $this->mutasiModel->search($keyword);
+            // }else {
+            //       $mutasi = $this->mutasiModel;
+            // }
             
-            $kunci = $this->request->getVar('kunci');
-            if($kunci){
-                  $mutasi = $this->mutasiModel->cari($kunci);
-            }else {
-                  $mutasi = $this->mutasiModel;
-            }
+            // $kunci = $this->request->getVar('kunci');
+            // if($kunci){
+            //       $mutasi = $this->mutasiModel->cari($kunci);
+            // }else {
+            //       $mutasi = $this->mutasiModel;
+            // }
             
             $data = [
                   'title' => 'Mutasi',
-                  'mutasi' => $mutasi->paginate(6, 'mutasi'),
-                  'pager' => $this->mutasiModel->pager,
-                  'currentPage' => $currentPage
+                  'mutasi' => $this->mutasiModel->findAll()
             ];
 
             return view('inventaris/mutasi', $data);

@@ -10,8 +10,8 @@ class PengembalianModel extends Model
       protected $useTimestamp = 'true';
       // protected $allowedFields = ['nama', 'telepon'];
 
-      public function search($keyword)
-      {
-            return $this->table('pengembalian')->like('barang', $keyword)->orlike('id_barang', $keyword);
-      }
+      // public function search($keyword)
+      // {
+      //       return $this->table('pengembalian')->like('barang', $keyword)->orlike('id_barang', $keyword);
+      // }
 }

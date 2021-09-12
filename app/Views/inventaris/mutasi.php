@@ -8,18 +8,20 @@
                   <h6 class="m-0 font-weight-bold text-primary">Mutasi</h6>
             </div>
             <div class="col-md-12 col-sm-12 ">
-                  <ul class="nav nav-tabs bar_tabs" id="myTab" role="tablist">
-                        <li class="nav-item">
-                              <a class="nav-link active" id="pemakaian-tab" data-toggle="tab" href="#pemakaian"
-                                    role="tab" aria-controls="pemakaian" aria-selected="true">Inventaris Barang
-                                    Keluar</a>
-                        </li>
-                        <li class="nav-item">
-                              <a class="nav-link" id="dokumen-tab" data-toggle="tab" href="#dokumen" role="tab"
-                                    aria-controls="dokumen" aria-selected="false">Berita Acara /
-                                    Report</a>
-                        </li>
-                  </ul>
+                  <div class="tab-content">
+                        <ul class="nav nav-tabs bar_tabs" id="tab" role="tablist">
+                              <li class="nav-item">
+                                    <a class="nav-link active" id="pemakaian-tab" data-toggle="tab" href="#pemakaian"
+                                          role="tab" aria-controls="pemakaian" aria-selected="true">Inventaris Barang
+                                          Keluar</a>
+                              </li>
+                              <li class="nav-item">
+                                    <a class="nav-link" id="dokumen-tab" data-toggle="tab" href="#dokumen" role="tab"
+                                          aria-controls="dokumen" aria-selected="true">Berita Acara /
+                                          Report</a>
+                              </li>
+                        </ul>
+                  </div>
             </div>
             <hr>
             <div class="tab-content" id="myTabContent">
@@ -39,19 +41,6 @@
                                                 </select>
                                           </div>
                                     </div>
-                                    <form action="" method="post" class="form-inline">
-                                          <div class="col-12">
-                                                <div class="input-group mb-3">
-                                                      <input type="text" class="form-control"
-                                                            placeholder="Input Keyword" name="keyword">
-                                                      <div class="input-group-append">
-                                                            <button class="btn btn-outline-secondary" type="submit"
-                                                                  name="submit"><strong><i class="fa fa-search"
-                                                                              aria-hidden="true"></i></strong></button>
-                                                      </div>
-                                                </div>
-                                          </div>
-                                    </form>
                               </nav>
                               <br>
                               <div class="item form-group">
@@ -65,9 +54,9 @@
                               </div>
                               <div class="card-body">
                                     <div class="table-responsive">
-                                          <table class="table table-bordered" id="dataTable" width="100%"
-                                                cellspacing="0">
-                                                <thead>
+                                          <table class="table table-striped table-bordered" id="mydatatable"
+                                                width="100%" cellspacing="0">
+                                                <thead style="text-align:center">
                                                       <tr>
                                                             <th>No</th>
                                                             <th>Kode Transaksi</th>
@@ -84,12 +73,12 @@
                                                       </tr>
                                                 </thead>
                                                 <tbody>
-                                                      <?php $i = 1 + (6 *($currentPage - 1)); ?>
+                                                      <?php $i = 1; ?>
                                                       <?php foreach($mutasi as $m) : ?>
                                                       <tr>
-                                                            <th scope='row'><?= $i++; ?></th>
+                                                            <td><?= $i++; ?></td>
                                                             <td>
-                                                                  <strong><?= $m['kode']; ?></strong>
+                                                                  <?= $m['kode']; ?>
                                                             </td>
                                                             <td><?= $m['id_peminjaman']; ?></td>
                                                             <td><?= $m['nama']; ?></td>
@@ -118,12 +107,13 @@
                                                 </tbody>
                                           </table>
                                     </div>
-                                    <?= $pager->links('mutasi', 'pelaporan_pagination'); ?>
                               </div>
                         </div>
                   </div>
-                  <div class="tab-pane fade" id="dokumen" role="tabpanel" aria-labelledby="dokumen-tab">
-                        <h4 style="text-align:left" class="berita">Dokumen Berita Acara Barang Keluar</h4>
+                  <div class="tab-pane fade" id="dokumen" role="tabpanel" aria-labelledby="dokumen-tab"
+                        id="mydatatable">
+                        <h4 style="text-align:left" class="berita">Dokumen Berita Acara Barang Keluar
+                        </h4>
                         <div>
                               <nav class="navbar navbar-light bg-light">
                                     <div class="col-md-3 col-sm-3 ">
@@ -139,19 +129,6 @@
                                                 </select>
                                           </div>
                                     </div>
-                                    <form action="" method="post" class="form-inline">
-                                          <div class="col-12">
-                                                <div class="input-group mb-3">
-                                                      <input type="text" class="form-control"
-                                                            placeholder="Input Keyword" name="kunci">
-                                                      <div class="input-group-append">
-                                                            <button class="btn btn-outline-secondary" type="submit"
-                                                                  name="submit"><strong><i class="fa fa-search"
-                                                                              aria-hidden="true"></i></strong></button>
-                                                      </div>
-                                                </div>
-                                          </div>
-                                    </form>
                               </nav>
                               <br>
                               <div class="item form-group">
@@ -165,8 +142,8 @@
                               </div>
                               <div class="card-body">
                                     <div class="table-responsive">
-                                          <table class="table table-bordered" id="dataTable" width="100%"
-                                                cellspacing="0">
+                                          <table class="table table-striped table-bordered" id="mydatatable"
+                                                width="100%" cellspacing="0">
                                                 <thead>
                                                       <tr>
                                                             <th>No</th>
@@ -181,7 +158,7 @@
                                                       </tr>
                                                 </thead>
                                                 <tbody>
-                                                      <?php $i = 1 + (6 *($currentPage - 1)); ?>
+                                                      <?php $i = 1; ?>
                                                       <?php foreach($mutasi as $m) : ?>
                                                       <tr>
                                                             <th scope='row'><?= $i++; ?></th>
@@ -193,13 +170,18 @@
                                                             <td><?= $m['nomor_berita']; ?></td>
                                                             <td><?= $m['penanggung_jawab_berita']; ?></td>
                                                             <td><?= $m['tanggal_berita']; ?></td>
+                                                            <td>
+                                                                  <a href="btn btn-primary">i</a>
+                                                            </td>
+                                                            <td>
+                                                                  <a href="btn btn-danger">i</a>
+                                                            </td>
                                                       </tr>
 
                                                       <?php endForeach; ?>
                                                 </tbody>
                                           </table>
                                     </div>
-                                    <?= $pager->links('mutasi', 'pelaporan_pagination'); ?>
                               </div>
                         </div>
                   </div>

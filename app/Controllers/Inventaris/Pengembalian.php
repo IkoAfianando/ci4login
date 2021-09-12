@@ -16,21 +16,10 @@ class Pengembalian extends BaseController
 
       public function index()
       {     
-            $currentPage = $this->request->getVar('page_pengembalian') ? $this->request->getVar('page_pengembalian') : 1;
-
-            $keyword = $this->request->getVar('keyword');
-            if($keyword)
-            {
-                  $pengembalian = $this->pengembalianModel->search($keyword);
-            }else {
-                  $pengembalian = $this->pengembalianModel;
-            }
 
             $data = [
                   'title' => 'Pengembalian',
-                  'pengembalian' => $pengembalian->paginate(6, 'pengembalian'),
-                  'pager' => $this->pengembalianModel->pager,
-                  'currentPage' => $currentPage
+                  'pengembalian' => $this->pengembalianModel->findAll()
             ];
 
             return view('inventaris/pengembalian', $data);

@@ -14,16 +14,7 @@ class Barang extends BaseController
       }
 
       public function index()
-      {     
-            // $currentPage = $this->request->getVar('page_barang') ? $this->request->getVar('page_barang') : 1;
-            
-            // $keyword = $this->request->getVar('keyword');
-            // if($keyword){
-            //       $barang = $this->barangModel->search($keyword);
-            // }else {
-            //       $barang = $this->barangModel;
-            // }
-
+      {       
             $data = [
                   'title' => 'Barang Masuk',
                   'barang' => $this->barangModel->findAll()

@@ -23,7 +23,7 @@
                   <br>
                   <div class="table-responsive">
                         <table class="table table-striped table-bordered dt-responsive nowrap" width="100%"
-                              id="pelaporan" width="100%" cellspacing="0">
+                              id="mydatatable" width="100%" cellspacing="0">
                               <thead>
                                     <tr>
                                           <th>id</th>
