@@ -14,8 +14,8 @@ class BarangSeeder extends Seeder
 		for($i = 0; $i < 100; $i++){
 			
 			$data = [
-				'nomor' => $faker->buildingNumber(),
-				'kode' => $faker->buildingNumber(),
+				'nomor' => $faker->name(),
+				'kode' => $faker->name(),
 				'transaksi' => $faker->buildingNumber(),
 				'penerima' => $faker->firstNameMale(),
 				'barang' => $faker->state(),

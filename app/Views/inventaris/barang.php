@@ -9,7 +9,7 @@
       <!-- DataTales Example -->
       <div class="card shadow mb-4">
             <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Barang Masuk</h6>
+                  <h6 class="m-0 font-weight-bol" id="atasan">Barang Masuk</h6>
             </div>
             <div class="card-body">
                   <nav class="navbar navbar-light bg-light">
@@ -19,27 +19,14 @@
                                     <i class="fa fa-plus"></i>&nbsp; Tambah Barang Masuk
                               </a>
                         </div>
-                        <form action="" method="post" class="form-inline">
-                              <div class="col-12">
-                                    <div class="input-group mb-3">
-                                          <input type="text" class="form-control" placeholder="Input Keyword"
-                                                name="keyword">
-                                          <div class="input-group-append">
-                                                <button class="btn btn-outline-secondary" type="submit"
-                                                      name="submit"><strong><i class="fa fa-search"
-                                                                  aria-hidden="true"></i></strong></button>
-                                          </div>
-                                    </div>
-                              </div>
-                        </form>
                   </nav>
                   <br>
                   <div class="table-responsive">
-                        <table class="table table-striped table-bordered dt-responsive nowrap" id="pelaporan"
-                              width="100%" cellspacing="0">
+                        <table class="table table-striped table-bordered" id="mydatatable" width="100%" cellspacing="0"
+                              responsive>
                               <thead>
                                     <tr>
-                                          <th>id</th>
+                                          <th>ID</th>
                                           <th>Nomor</th>
                                           <th>Kode Barang</th>
                                           <th>Kode Transaksi</th>
@@ -57,9 +44,9 @@
                                     <?php $i = 1; ?>
                                     <?php foreach($barang as $b) : ?>
                                     <tr>
-                                          <th scope='row'><?= $i++; ?></th>
+                                          <td><?= $i++; ?></td>
                                           <td>
-                                                <strong><?= $b['nomor']; ?></strong>
+                                                <?= $b['nomor']; ?>
                                           </td>
                                           <td><?= $b['kode']; ?></td>
                                           <td><?= $b['transaksi']; ?></td>
@@ -68,8 +55,11 @@
                                           <td><?= $b['jenis']; ?></td>
                                           <td><?= $b['quantity']; ?></td>
                                           <td><?= $b['harga']; ?></td>
-                                          <td></td>
+                                          <td><?= $b['gambar_barang']; ?></td>
                                           <td><?= $b['keterangan']; ?></td>
+                                          <td>
+                                                <a href="btn btn-primary"></a>
+                                          </td>
 
                                     </tr>
 
