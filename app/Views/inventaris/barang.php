@@ -34,7 +34,7 @@
                                           <th>Nama Barang</th>
                                           <th>Jenis Barang</th>
                                           <th>Quantity</th>
-                                          <th>Harga</th>
+                                          <th>Harga Barang</th>
                                           <th>Gambar</th>
                                           <th>Keterangan</th>
                                           <th>Aksi</th>
